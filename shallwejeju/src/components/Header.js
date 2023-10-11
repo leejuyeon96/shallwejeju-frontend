@@ -8,8 +8,10 @@ const StyledHeader = styled.header`
   
   
     .header-start {
-        font-family: Josefin Slab;
-        color: white;
+        font-family: 'Josefin Slab';
+        color: green;
+        text-decoration: none;
+        
     }
     
     .header-center {
@@ -28,15 +30,15 @@ const Header = () => {
         <StyledHeader>
             <div className="header-start">
                 <a href="#">
-                <h2 style={{}}>Shall We Jeju?</h2>
+                <h2>Shall We Jeju?</h2>
                 </a>
             </div>
 
             <div className="header-center">
                 <a href="#">홈</a>
-                <a href="#">홈</a>
-                <a href="#">홈</a>
-                <a href="#">홈</a>
+                <a href="#">어떤 여행을 할까?</a>
+                <a href="#">우리의 여행</a>
+                <a href="#">마이페이지</a>
             </div>
             <div className="header-end">
 
