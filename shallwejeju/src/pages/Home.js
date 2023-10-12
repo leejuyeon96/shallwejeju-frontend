@@ -20,7 +20,7 @@ const Home = () => {
       <video muted autoPlay loop>
         <source src="/videos/KakaoTalk_20231012_191144896.mp4" type="video/mp4"></source>
       </video>
-      <logo
+      <logo></logo>
     </StyledMain>
   );
 };
