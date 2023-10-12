@@ -12,6 +12,8 @@ const StyledHeader = styled.header`
         color: green;
         text-decoration: none;
         
+        
+        
     }
     
     .header-center {

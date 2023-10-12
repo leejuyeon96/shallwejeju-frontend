@@ -1,3 +1,7 @@
+const StyledHome = styled.home`
+
+`
+
 const Home = () => {
 
     return (
