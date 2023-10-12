@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React from "react";
+// import React from "react";
 // import { FontAwesomeIcon } from "@fontawesome/react-fontawesome";
 import React, { useRef } from "react";
 
@@ -22,7 +22,7 @@ const StyledAside = styled.aside`
     background-color: white;
   }
 `;
-const StyledHome = styled.home`
+const StyledHome = styled.div`
   video {
     border-radius: 15px;
     height: 220px;
@@ -32,11 +32,12 @@ const StyledHome = styled.home`
 
 const Home = () => {
   const videoRef = useRef(null);
+  return (
+    <StyledHome>
+      <video ref={videoRef} src="../assets/sea_-_10816(720p).mp4"></video>
+    </StyledHome>
+  );
 };
-return (
-  <div>
-    <video ref={videoRef} src="../assets/sea_-_10816(720p).mp4"></video>
-  </div>
-);
+
 
 export default Home;
