@@ -1,16 +1,25 @@
-@font-face {
-  font-family: "JosefinSlab";
-  font-display: fallback;
-  src: url("./JosefinSlab-SemiBold.woff") format("truetype"),
-    url("./JosefinSlab-SemiBold.woff") format("woff"),
-    format("embedded-opentype");
-  font-style: normal;
-}
+
 
 @font-face {
   font-family: "Orbit";
   font-display: fallback;
   src: url("./Orbit-Regular.woff2") format("truetype"),
   url("./Orbit-Regular.woff2") format("woff2"), format("embedded-opentype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Yeongdeok";
+  font-display: fallback;
+  src: url("./Yeongdeok-Sea.woff") format("truetype"), url("./Yeongdeok-Sea.woff") format("woff"), format("embedded-opentype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "JosefinSlab";
+  font-display: fallback;
+  src: url("./JosefinSlab-VariableFont_wght.woff") format("truetype"),
+    url("./JosefinSlab-VariableFont_wght.woff") format("woff"),
+    format("embedded-opentype");
   font-style: normal;
 }
