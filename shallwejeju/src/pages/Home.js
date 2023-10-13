@@ -1,6 +1,6 @@
 import styled from "styled-components";
 // import React from "react";
-// import { FontAwesomeIcon } from "@fontawesome/react-fontawesome";
+import "../fonts/font.css";
 import React, { useRef } from "react";
 
 const StyledMain = styled.main`
@@ -9,7 +9,7 @@ const StyledMain = styled.main`
     height: 100%;
     object-fit: cover;
   }
-  main {
+  * {
     padding: 0px;
     margin: 0px;
   }
@@ -17,14 +17,15 @@ const StyledMain = styled.main`
   .text {
     position: absolute;
     width: 100%;
-    top: 50%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
   .text p {
     text-align: center;
-    font-size: 48px;
+    font-size: 70px;
     color: white;
+    font-family: "JosefinSlab";
   }
 `;
 

@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "JosefinSlab";
+  font-display: fallback;
+  src: url("./JosefinSlab-SemiBold.woff") format("truetype"),
+    url("./JosefinSlab-SemiBold.woff") format("woff"),
+    format("embedded-opentype");
+  font-style: normal;
+}
