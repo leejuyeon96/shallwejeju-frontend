@@ -9,8 +9,22 @@ const StyledMain = styled.main`
     height: 100%;
     object-fit: cover;
   }
-  logo {
-    
+  main {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .text {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .text p {
+    text-align: center;
+    font-size: 48px;
+    color: white;
   }
 `;
 
@@ -18,12 +32,16 @@ const Home = () => {
   return (
     <StyledMain>
       <video muted autoPlay loop>
-        <source src="/videos/KakaoTalk_20231012_191144896.mp4" type="video/mp4"></source>
+        <source
+          src="/videos/KakaoTalk_20231012_191144896.mp4"
+          type="video/mp4"
+        ></source>
       </video>
-      <logo></logo>
+      <div className="text">
+        <p>Shall We Jeju?</p>
+      </div>
     </StyledMain>
   );
 };
-
 
 export default Home;

@@ -7,7 +7,7 @@ const StyledHeader = styled.header`
 
   .header-start {
     font-family: "Josefin Slab";
-    color: green;
+    color: rgb(10, 10, 85);
     text-decoration: none;
   }
 
