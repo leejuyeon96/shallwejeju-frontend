@@ -6,3 +6,11 @@
     format("embedded-opentype");
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Orbit";
+  font-display: fallback;
+  src: url("./Orbit-Regular.woff2") format("truetype"),
+  url("./Orbit-Regular.woff2") format("woff2"), format("embedded-opentype");
+  font-style: normal;
+}

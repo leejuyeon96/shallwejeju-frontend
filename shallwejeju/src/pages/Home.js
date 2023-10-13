@@ -1,7 +1,7 @@
 import styled from "styled-components";
 // import React from "react";
 import "../fonts/font.css";
-import React, { useRef } from "react";
+
 
 const StyledMain = styled.main`
   video {

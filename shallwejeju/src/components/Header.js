@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import "../fonts/font.css";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -6,17 +7,21 @@ const StyledHeader = styled.header`
   align-items: center;
 
   .header-start {
-    font-family: "Josefin Slab";
+    
     color: rgb(10, 10, 85);
     text-decoration: none;
+    font-family: "JosefinSlab";
+    font-weight: 800;
   }
 
   .header-center {
     a {
       text-decoration: none;
-      padding: 15px;
+      padding: 50px;
       color: rgb(10, 10, 85);
       align-items: center;
+      font-family: "Orbit";
+      
     }
   }
 `;
