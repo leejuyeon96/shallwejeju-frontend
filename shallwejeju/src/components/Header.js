@@ -34,6 +34,12 @@ const StyledHeader = styled.header`
     }
   }
   .header-footer {
+    a {
+      font-family: "Yeongdeok";
+      color: rgb(10, 10, 85);
+      padding: 10px;
+      text-decoration: none;
+    }
   }
 `;
 
@@ -52,7 +58,8 @@ const Header = () => {
         <a href="#">마이페이지</a>
       </div>
       <div className="header-footer">
-
+        <a href="#">LogIn</a>
+        <a href="#">JoinUs</a>
       </div>
     </StyledHeader>
   );
