@@ -1,17 +1,24 @@
-
+@font-face {
+  font-family: "SKYBORI";
+  font-display: fallback;
+  src: url("./SKYBORI.woff") format("truetype"),
+    url("./SKYBORI.woff") format("woff"), format("embedded-opentype");
+  font-style: normal;
+}
 
 @font-face {
   font-family: "Orbit";
   font-display: fallback;
   src: url("./Orbit-Regular.woff2") format("truetype"),
-  url("./Orbit-Regular.woff2") format("woff2"), format("embedded-opentype");
+    url("./Orbit-Regular.woff2") format("woff2"), format("embedded-opentype");
   font-style: normal;
 }
 
 @font-face {
   font-family: "Yeongdeok";
   font-display: fallback;
-  src: url("./Yeongdeok-Sea.woff") format("truetype"), url("./Yeongdeok-Sea.woff") format("woff"), format("embedded-opentype");
+  src: url("./Yeongdeok-Sea.woff") format("truetype"),
+    url("./Yeongdeok-Sea.woff") format("woff"), format("embedded-opentype");
   font-style: normal;
 }
 
@@ -21,5 +28,13 @@
   src: url("./JosefinSlab-VariableFont_wght.woff") format("truetype"),
     url("./JosefinSlab-VariableFont_wght.woff") format("woff"),
     format("embedded-opentype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GangWon";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduHyeonokT_OTFMediumA.woff")
+    format("woff");
+  font-weight: normal;
   font-style: normal;
 }

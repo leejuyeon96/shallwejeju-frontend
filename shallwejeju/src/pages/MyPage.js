@@ -1,12 +1,10 @@
-const MyPageMain = styled.main`
-    
-`;
+const MyPageMain = styled.main``;
 
 const MyPage = () => {
-    return (
-        
-
-
-    );
+  return (
+    <StyleMain>
+      <div className=""></div>
+    </StyleMain>
+  );
 };
 export default MyPage;
