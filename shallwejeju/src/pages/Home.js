@@ -5,8 +5,8 @@ import "../fonts/font.css";
 const StyledMain = styled.main`
   .first-background {
     width: 100%;
-    height: 800px;
-
+    height: 8 00px;
+    overflow: hidden;
     margin: 0px auto;
     position: relative;
   }
@@ -60,6 +60,7 @@ const StyledMain = styled.main`
       font-size: 50px;
       font-family: "JosefinSlab";
       font-weight: bold;
+      padding-bottom: 500px;
     }
 
     .discription-box {
