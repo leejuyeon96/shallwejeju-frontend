@@ -37,8 +37,9 @@ const StyledHeader = styled.header`
     a {
       font-family: "Yeongdeok";
       color: rgb(10, 10, 85);
-      padding: 10px;
+      padding: 5px;
       text-decoration: none;
+      margin-right: 30px;
     }
   }
 `;

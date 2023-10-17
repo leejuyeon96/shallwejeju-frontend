@@ -1,17 +1,27 @@
 import styled from "styled-components";
 import "../fonts/font.css";
+// import "../resources/profileImg.jpg";
+import React from "react";
+
 
 const StyleMain = styled.main`
   .text {
+    margin-top: 28px;
     background-color: #dcdcdc;
-    height: 50px;
+    height: 80px;
+  
     p {
-      margin-top: 31px;
+      height: 50px;
+      line-height: 70px;
+      display: flex;
       margin-left: 50px;
       font-family: "Orbit";
       font-size: 20px;
       font-weight: bolder;
     }
+  }
+  .profileImg {
+      border-radius: 50%;
   }
 `;
 const MyPage = () => {
@@ -20,6 +30,10 @@ const MyPage = () => {
       <div className="text">
         <p>마이페이지</p>
       </div>
+      <div className="profile-photo">
+        <img src={img} className="profileImg"></img>
+      </div>
+      <div className="profile-name"></div>
     </StyleMain>
   );
 };
