@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import MyPage from "./pages/MyPage";
+import KakaoMap from "./pages/Map";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
         path: "/MyPage",
         element: <MyPage />,
       },
+      {
+        path: "/Map",
+        element: <KakaoMap/>
+      }
     ],
   },
 ]);
