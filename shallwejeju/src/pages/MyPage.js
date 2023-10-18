@@ -31,7 +31,7 @@ const MyPage = () => {
         <p>마이페이지</p>
       </div>
       <div className="profile-photo">
-        <img src={img} className="profileImg"></img>
+      
       </div>
       <div className="profile-name"></div>
     </StyleMain>

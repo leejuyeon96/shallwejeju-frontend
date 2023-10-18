@@ -49,7 +49,7 @@ const StyledMain = styled.main`
     .discription {
       position: absolute;
       width: 100%;
-      top: 50%;
+      top: 70%;
       left: 50%;
       transform: translate(-50%, -50%);
     }
@@ -57,7 +57,7 @@ const StyledMain = styled.main`
     .discription p {
       color: white;
       text-align: center;
-      font-size: 50px;
+      font-size: 60px;
       font-family: "JosefinSlab";
       font-weight: bold;
       padding-bottom: 500px;
@@ -113,7 +113,7 @@ const Home = () => {
           <div className="discription-box">
             <p>
               우리 사이트는 제주도 여행계획을 여행메이트들과 일정을 짜며 공유할
-              수 있도록 만들어졌습니다.
+              수 있도록 만들어졌습니다. <br/> 멋진 제주 여행에서 소중한 추억을 쌓으세요.
             </p>
           </div>
         </div>
