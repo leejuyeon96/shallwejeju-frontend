@@ -20,7 +20,6 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // 유효성 검사 로직 추가
     if (formData.password !== formData.confirmPassword) {
       alert("비밀번호가 일치하지 않습니다.");
       return;
