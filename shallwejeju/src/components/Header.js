@@ -52,14 +52,14 @@ const Header = () => {
       </div>
 
       <div className="header-center">
-        <a href="#">홈</a>
+        <a href="/">홈</a>
         <a href="#">어떤 여행을 할까?</a>
         <a href="#">우리의 여행</a>
         <a href="#">같이 놀아요</a>
-        <a href="#">마이페이지</a>
+        <a href="/MyPage">마이페이지</a>
       </div>
       <div className="header-footer">
-        <a href="#">LogIn</a>
+        <a href="/Login">LogIn</a>
         <a href="#">JoinUs</a>
       </div>
     </StyledHeader>

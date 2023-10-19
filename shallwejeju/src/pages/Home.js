@@ -64,7 +64,7 @@ const StyledMain = styled.main`
     }
 
     .discription-box {
-      border: 2px solid white;
+      // border: 2px solid white;
       margin: 0 auto;
       width: 800px;
       height: 200px;
