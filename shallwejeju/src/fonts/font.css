@@ -38,3 +38,11 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Avenir";
+  font-display: fallback;
+  src: url("./Avenir-Regular.woff") format("truetype"),
+    url("./Avenir-Regular.woff") format("woff"), format("embedded-opentype");
+  font-style: normal;
+}

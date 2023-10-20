@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import "../fonts/font.css";
-import logo from '../assets/Untitled.jpg';
-
-
+import logo from "../assets/Untitled.jpg";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -48,7 +46,7 @@ const Header = () => {
   return (
     <StyledHeader>
       <div className="header-start">
-        <img src={logo}/>
+        <img src={logo} />
       </div>
 
       <div className="header-center">
@@ -60,7 +58,7 @@ const Header = () => {
       </div>
       <div className="header-footer">
         <a href="/Login">LogIn</a>
-        <a href="#">JoinUs</a>
+        <a href="/Signup">JoinUs</a>
       </div>
     </StyledHeader>
   );
