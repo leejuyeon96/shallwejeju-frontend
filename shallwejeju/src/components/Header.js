@@ -31,7 +31,7 @@ const StyledHeader = styled.header`
       
     }
   }
-  .header-footer {
+  .header-end {
     a {
       font-family: "Yeongdeok";
       color: rgb(10, 10, 85);
@@ -56,7 +56,7 @@ const Header = () => {
         <a href="#">같이 놀아요</a>
         <a href="/MyPage">마이페이지</a>
       </div>
-      <div className="header-footer">
+      <div className="header-end">
         <a href="/Login">LogIn</a>
         <a href="/Signup">JoinUs</a>
       </div>
