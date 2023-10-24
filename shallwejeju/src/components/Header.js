@@ -27,6 +27,7 @@ const StyledHeader = styled.header`
       color: rgb(10, 10, 85);
       align-items: center;
       font-family: "Yeongdeok";
+      font-size: 16px;
       
       
     }

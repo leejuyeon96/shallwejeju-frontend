@@ -5,13 +5,14 @@ import "../fonts/font.css";
 const StyledMain = styled.main`
   .first-background {
     width: 100%;
-    height: 8 00px;
-    overflow: hidden;
+    height: 800px;
+    
     margin: 0px auto;
     position: relative;
   }
   video {
     width: 100%;
+    object-fit: cover;
   }
 
   * {
@@ -40,19 +41,20 @@ const StyledMain = styled.main`
   .second-background {
     width: 100%;
     height: 800px;
-
+    background: inherit;
     margin: 0px auto;
     position: relative;
 
     video {
       width: 100%;
+      height: 800px;
     }
     .discription {
       position: absolute;
-      width: 100%;
-      top: 70%;
+      width: 400px;
+      top: 40%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -70%);
     }
 
     .discription p {
@@ -61,7 +63,7 @@ const StyledMain = styled.main`
       font-size: 60px;
       font-family: "JosefinSlab";
       font-weight: bold;
-      padding-bottom: 500px;
+      padding-bottom: 300px;
     }
 
     .discription-box {
