@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import styled from "styled-components";
+import orange from "../assets/orange-5162818_1280 (1).jpg";
 
 const H1 = styled.h1`
   font-size: 20px;
@@ -33,6 +34,8 @@ const Login = () => {
 
   return (
     <Container>
+      <div className="background">
+        <img src={orange}/>
       <H1>로그인</H1>
       <Form onSubmit={onSubmit} style={{ width: "600px", margin: "0 auto" }}>
         <Form.Group className="mb-3">
@@ -49,6 +52,7 @@ const Login = () => {
           <Form.Control type="submit" value="로그인" />
         </Form.Group>
       </Form>
+      </div>
     </Container>
   );
 };

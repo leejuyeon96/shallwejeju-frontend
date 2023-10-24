@@ -17,38 +17,50 @@ const StyleMain = styled.main`
       opacity: 0.4;
     }
     .signup-box {
+      
       background-color: white;
       position: absolute;
       width: 500px;
-      height: 400px;
-      top: 50%;
+      height: 500px;
+      top: 40%;
       left: 50%;
       transform: translate(-50%, -50%);
       opacity: 0.8;
     }
     .form {
       text-align: center;
+      
     }
     .form input {
+      width: 230px !important;
       text-align: center;
-      padding: 10px;
+      border-radius: 20px;
       box-sizing: border-box;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
+      min-width: 200px;
     }
     h1 {
-      font-family: "Yeongdeok";
-      margin-top: 10px;
+      font-family: "Space";
+      margin-top: 20px;
       margin-bottom: 20px;
-      font-size: 20px;
+      font-size: 35px;
       text-align: center;
       font-weight: bolder;
+      letter-spacing: 2px;
     }
     button {
       margin-top: 20px;
     }
-    p {
-      margin-top: 40px;
+    .link-login {
+      margin-top: 30px;
     }
+    p {
+      margin-bottom: 10px;
+    }
+    .tologin {
+      font-family: "Space";
+    }
+  
   }
 `;
 
@@ -73,6 +85,10 @@ const Signup = () => {
 
     if (formData.password !== formData.confirmPassword) {
       alert("비밀번호가 일치하지 않습니다.");
+      return;
+    }
+    if (!formData.username || !formData.email || !formData.password || !formData.confirmPassword) {
+      alert("필수 입력값을 모두 입력하세요.");
       return;
     }
 
@@ -110,6 +126,7 @@ const Signup = () => {
           <form className="form" onSubmit={handleSubmit}>
             <h1>Join Us</h1>
             <div>
+              <p>NAME*</p>
               <input
                 type="text"
                 name="username"
@@ -119,6 +136,7 @@ const Signup = () => {
               />
             </div>
             <div>
+              <p>EMAIL*</p>
               <input
                 type="email"
                 name="email"
@@ -128,6 +146,7 @@ const Signup = () => {
               />
             </div>
             <div>
+              <p>PASSWORD*</p>
               <input
                 type="password"
                 name="password"
@@ -137,6 +156,7 @@ const Signup = () => {
               />
             </div>
             <div>
+              <p>CONFIRM-PASSWORD*</p>
               <input
                 type="password"
                 name="confirmPassword"
@@ -148,10 +168,11 @@ const Signup = () => {
             <button className="btn btn-outline-secondary" type="submit">
               Join Us
             </button>
-
-            <p>
-              이미 계정이 있으신가요? <Link to="/Login">Log In</Link>
-            </p>
+            <div className="link-login">
+            <span>
+              이미 계정이 있으신가요? <Link to="/Login" className="tologin">Log In</Link>
+            </span>
+            </div>
           </form>
         </div>
       </div>

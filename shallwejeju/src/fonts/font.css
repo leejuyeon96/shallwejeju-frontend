@@ -46,3 +46,19 @@
     url("./Avenir-Regular.woff") format("woff"), format("embedded-opentype");
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Sometype";
+  font-display: fallback;
+  src: url("./SometypeMono-Regular.woff") format("truetype"),
+    url("./SometypeMono-Regular.woff") format("woff"), format("embedded-opentype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Space";
+  font-display: fallback;
+  src: url("./SpaceGrotesk-Regular.woff") format("truetype"),
+    url("./SpaceGrotesk-Regular.woff") format("woff"), format("embedded-opentype");
+  font-style: normal;
+}
