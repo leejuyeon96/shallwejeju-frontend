@@ -21,7 +21,7 @@ const StyleMain = styled.main`
       background-color: white;
       position: absolute;
       width: 500px;
-      height: 500px;
+      height: 600px;
       top: 40%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -34,10 +34,13 @@ const StyleMain = styled.main`
     .form input {
       width: 230px !important;
       text-align: center;
-      border-radius: 20px;
+      border: 1px solid;
       box-sizing: border-box;
       margin-bottom: 20px;
       min-width: 200px;
+    }
+    input::placeholder{
+      font-family: "YeongDeok";
     }
     h1 {
       font-family: "Space";
@@ -52,13 +55,18 @@ const StyleMain = styled.main`
       margin-top: 20px;
     }
     .link-login {
-      margin-top: 30px;
+      margin-top: 40px;
+      
     }
     p {
       margin-bottom: 10px;
     }
     .tologin {
       font-family: "Space";
+      margin-left: 10px;
+    }
+    span {
+      font-family: "YeongDeok";
     }
   
   }
@@ -87,7 +95,7 @@ const Signup = () => {
       alert("비밀번호가 일치하지 않습니다.");
       return;
     }
-    if (!formData.username || !formData.email || !formData.password || !formData.confirmPassword) {
+    if (!formData.id || !formData.username || !formData.email || !formData.password || !formData.confirmPassword) {
       alert("필수 입력값을 모두 입력하세요.");
       return;
     }
@@ -125,6 +133,16 @@ const Signup = () => {
         <div className="signup-box">
           <form className="form" onSubmit={handleSubmit}>
             <h1>Join Us</h1>
+            <div>
+            <p>ID*</p>
+              <input
+                type="text"
+                name="id"
+                placeholder="아이디"
+                value={formData.id}
+                onChange={handleChange}
+              />
+            </div>
             <div>
               <p>NAME*</p>
               <input

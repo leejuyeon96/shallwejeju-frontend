@@ -25,6 +25,7 @@ const StyledMain = styled.main`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    // letter-spacing: 8px;
   }
   .text p {
     text-align: center;
