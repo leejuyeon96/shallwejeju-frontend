@@ -62,3 +62,12 @@
     url("./SpaceGrotesk-Regular.woff") format("woff"), format("embedded-opentype");
   font-style: normal;
 }
+
+
+@font-face {
+  font-family: "IBM";
+  font-display: fallback;
+  src: url("./IBMPlexSansKR-Medium.woff") format("truetype"),
+    url("./IBMPlexSansKR-Medium.woff") format("woff"), format("embedded-opentype");
+  font-style: normal;
+}

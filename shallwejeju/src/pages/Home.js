@@ -95,7 +95,7 @@ const Home = () => {
         <div className="first-background">
           <video muted autoPlay loop>
             <source
-              src="/videos/KakaoTalk_20231012_191144896.mp4"
+              src="/videos/\KakaoTalk_20231025_190742353.mp4"
               type="video/mp4"
             ></source>
           </video>

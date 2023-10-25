@@ -9,11 +9,17 @@ const StyledHeader = styled.header`
   height: 70px;
 
   .header-start {
-    img {
-      margin-left: 1px;
-      width: 200px;
-      height: 70px;
+    // img {
+    //   margin-left: 1px;
+    //   width: 200px;
+    //   height: 70px;
     
+    // }
+    h1 {
+      font-family: "JoSefinSlab";
+      font-size: 30px;
+      font-weight: bolder;
+      letter-spacing: 5px;
     }
     }
     
@@ -47,7 +53,7 @@ const Header = () => {
   return (
     <StyledHeader>
       <div className="header-start">
-        <img src={logo} />
+        <h1>Shell We Jeju?</h1>
       </div>
 
       <div className="header-center">

@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
-import MyPage from "./pages/MyPage";
+import MyPage from "./pages/MyPage/MyPage";
 import KakaoMap from "./pages/Map";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
