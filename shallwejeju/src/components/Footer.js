@@ -6,10 +6,7 @@ const StyledFooter = styled.footer`
   align-items: center;
   height: 70px;
   flex-direction: column;
-  // position: relative;
-  // text-align: center;
-  // height: 100%; /* 높이를 100%로 설정 */
-  // overflow: hidden;
+
   
   
   .mark {

@@ -63,11 +63,11 @@ const StyledMain = styled.main`
       font-size: 60px;
       font-family: "JosefinSlab";
       font-weight: bold;
-      padding-bottom: 300px;
+      padding-bottom: 100px;
     }
 
     .discription-box {
-      // border: 2px solid white;
+     border: 2px solid white;
       margin: 0 auto;
       width: 800px;
       height: 200px;
@@ -78,7 +78,7 @@ const StyledMain = styled.main`
     .discription-box p {
       padding: 5px 10px;
       color: whitesmoke;
-      top: 50%;
+      top: 100%;
       left: 50%;
       font-family: "GangWon";
       font-size: 25px;
