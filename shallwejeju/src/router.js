@@ -5,6 +5,7 @@ import MyPage from "./pages/MyPage/MyPage";
 import KakaoMap from "./pages/Map";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import LoginSignup from "./pages/LoginSignup";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/Signup",
         element: <Signup/>
+      },
+      { 
+        path: "/LoginSignup",
+        element: <LoginSignup/>
       }
     ],
   },

@@ -32,13 +32,23 @@ const StyleMain = styled.main`
       
     }
     .form input {
-      width: 230px !important;
-      text-align: center;
-      border: 1px solid;
-      box-sizing: border-box;
-      margin-bottom: 20px;
-      min-width: 200px;
-    }
+      // width: 230px !important;
+      // text-align: center;
+      // border: 1px solid;
+      // box-sizing: border-box;
+      // margin-bottom: 20px;
+      // min-width: 200px;
+    
+        width: 300px;
+        height: 32px;
+        font-size: 15px;
+        border: 0;
+        border-radius: 15px;
+        outline: none;
+        padding-left: 10px;
+        background-color: rgb(233, 233, 233);
+      }
+    
     input::placeholder{
       font-family: "YeongDeok";
     }
