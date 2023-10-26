@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import "../fonts/font.css";
-import logo from "../assets/Untitled.jpg";
+// import logo from "../assets/Untitled.jpg";
 
 const StyledHeader = styled.header`
   display: flex;
