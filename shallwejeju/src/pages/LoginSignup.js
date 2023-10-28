@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-// import 'font-awesome/css/font-awesome.min.css';
+import { Link } from 'react-router-dom';
 import jeju from "../assets/jeju-island-1063203_1280.jpg";
 
 const StyleMain = styled.main`
@@ -37,8 +37,9 @@ const StyleMain = styled.main`
     background: #ebecf0;
     display: flex;
     flex-direction: column;
-    padding: 0 50px;
+    padding: 0 3rem;
     height: 100%;
+    text-align: center;
     justify-content: center;
     align-items: center;
   }
@@ -71,7 +72,7 @@ const StyleMain = styled.main`
   .form_btn:active {
     box-shadow: inset 1px 1px 2px #babebc, inset -1px -1px 2px #fff;
   }
-  .overlay_btn {
+  .login-overlay-btn {
     //   background-color: #ff4b2b;
     //   color: #fff;
     //   box-shadow: -5px -5px 10px #ff6b3f, 5px 5px 8px #bf4b2b;
@@ -79,29 +80,37 @@ const StyleMain = styled.main`
     box-shadow: -5px -5px 10px #fff, 5px 5px 8px #babebc;
     //
   }
-  .sign-in-container {
+  .signup-overlay-btn {
+    //   background-color: #ff4b2b;
+    //   color: #fff;
+    //   box-shadow: -5px -5px 10px #ff6b3f, 5px 5px 8px #bf4b2b;
+    background: #eee;
+    box-shadow: -5px -5px 10px #fff, 5px 5px 8px #babebc;
+    //
+  }
+  .login-container {
     position: absolute;
     left: 0;
     width: 50%;
     height: 100%;
     transition: all 0.5s;
   }
-  .sign-up-container {
+  .signup-container {
     position: absolute;
-    left: 0;
+    right: 0;
     width: 50%;
     height: 100%;
     opacity: 0;
     transition: all 0.5s;
   }
-  .overlay-left {
+  .overlay {
     display: flex;
     flex-direction: column;
     padding: 0 50px;
     justify-content: center;
     align-items: center;
     position: absolute;
-    right: 0;
+    left: 0;
     width: 50%;
     height: 100%;
     opacity: 0;
@@ -109,41 +118,56 @@ const StyleMain = styled.main`
     color: #fff;
     transition: all 0.5s;
   }
-  .overlay-right {
-    display: flex;
-    flex-direction: column;
-    padding: 0 50px;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    right: 0;
-    width: 50%;
-    height: 100%;
-    //   background-color: #FF8C00;
-    color: #fff;
-    transition: all 0.5s;
+  .overlay__panel {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+  width: 50%;
+
   }
-  .container.right-panel-active .sign-in-container {
-    transform: translateX(100%);
-    opacity: 0;
+  .container.container.right-panel-active .overlay {
+    transform: translateX(50%);
   }
-  .container.right-panel-active .sign-up-container {
+  .overlay-right{
+    transform: translateX(20%);
+
+  }
+  
+  .container.right-panel-active .login-container {
     transform: translateX(100%);
+    
+  }
+  .container.right-panel-active .signup-container {
+    animation: show 0.6s;
     opacity: 1;
-    z-index: 2;
+    transform: translateX(100%);
+    z-index: 5;
   }
   .container.right-panel-active .overlay-right {
-    transform: translateX(-100%);
-    opacity: 0;
+    transform: translateX(20%);
+   
+  }
+  .overlay-right{
+    right: 0;
+    transform: translateX(0);
+
+  }
+  .overlay-left {
+    transform: translateX(-20%);
   }
   .container.right-panel-active .overlay-left {
-    transform: translateX(-100%);
-    opacity: 1;
-    z-index: 2;
+    transform: translateX(0);
+   
+    
   }
-  .social-links {
-    margin: 20px 0;
-  }
+
   form h1 {
     font-weight: bold;
     margin: 0;
@@ -156,117 +180,85 @@ const StyleMain = styled.main`
     letter-spacing: 0.5px;
     margin: 20px 0 30px;
   }
-  span {
-    font-size: 12px;
-    color: #000;
-    letter-spacing: 0.5px;
-    margin-bottom: 10px;
-  }
-  .social-links div {
-    width: 40px;
-    height: 40px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 5px;
-    border-radius: 50%;
-    box-shadow: -5px -5px 10px #fff, 5px 5px 8px #babebc;
-    cursor: pointer;
-  }
-  .social-links a {
-    color: #000;
-  }
-  .social-links div:active {
-    box-shadow: inset 1px 1px 2px #babebc, inset -1px -1px 2px #fff;
-  }
+
 `;
 
 const LoginSignup = () => {
   const [isRightPanelActive, setIsRightPanelActive] = useState(false);
+
+  const handlePanelToggle = () => {
+    setIsRightPanelActive((prev) => !prev);
+  };
 
   const handleSignUpClick = () => {
     console.log("Signup button clicked");
     setIsRightPanelActive(true);
   };
 
-  const handleSignInClick = () => {
+
+  const handleLogInClick = () => {
+    
     setIsRightPanelActive(false);
   };
 
   return (
     <StyleMain>
-      <div className="wrapper">
-        <img src={jeju}></img>
-        <div
-          className={`container ${
-            isRightPanelActive ? "right-panel-active" : ""
-          }`}
-        >
-          <button
-            id="signUp"
-            className="overlay_btn"
-            onClick={handleSignUpClick}
-          >
-            Sign Up
-          </button>
-          <button
-            id="signIn"
-            className="overlay_btn"
-            onClick={handleSignInClick}
-          >
-            Sign In
-          </button>
-        </div>
-        <div className="container">
-          <div className="sign-up-container">
+    <div className="wrapper">
+      <img src={jeju}/>
+      <div className={`container ${isRightPanelActive ? "right-panel-active" : ""}`}>
+        
+      
+        <div className="signup-container">
             <form>
               <h1>Create Account</h1>
-
-              <span>or use your email for registration</span>
-              <input type="text" placeholder="Name" />
+              <input type="id" placeholder="Id" />
               <input type="email" placeholder="Email" />
               <input type="password" placeholder="Password" />
-              <button className="form_btn">Sign Up</button>
+              <button type="submit" className="form_btn">Sign Up</button>
             </form>
           </div>
-          <div className="sign-in-container">
+          <div className="login-container">
             <form>
-              <h1>Sign In</h1>
-
-              <span>or use your account</span>
+              <h1>Log In</h1>
+              <br></br><br></br>
+              
               <input type="id" placeholder="Id" />
               <input type="password" placeholder="Password" />
-              <button className="form_btn">Sign In</button>
+              <button type="submit" className="form_btn">Log In</button>
             </form>
           </div>
           <div className="overlay-container">
-            <div className="overlay-left">
-              <h1>Welcome Back</h1>
-              <p>
-                To keep connected with us, please login with your personal info
-              </p>
-              <button
-                id="signIn"
-                className="overlay_btn"
-                onClick={handleSignUpClick}
-              >
-                Sign In
-              </button>
-            </div>
-            <div className="overlay-right">
-              <h1>Hello</h1>
-              <p>Enter your personal details and start your journey with us</p>
-              <button
-                id="signUp"
-                className="overlay_btn"
-                onClick={handleSignUpClick}
-              >
-                Sign Up
-              </button>
-            </div>
+            <div className="overlay" >
+                <div className="overlay__panel overlay-left">
+                <h1>Welcome Back</h1>
+                <p>
+                  To keep connected with us, please login with your personal info
+                </p>
+                <button
+                  id="logIn"
+                  className="login-overlay-btn"
+                  onClick={handleLogInClick}>
+                
+                  Log In
+                </button>
+                </div>
+          </div>	
+            <div className="overlay">
+                <div className="overlay__panel overlay-right">
+                <h1>Hello</h1>
+                <p>회원가입하여 멋진 제주 여행 일정을 만들어보세요</p>
+                <button
+                  id="signUp"
+                  className="signup-overlay-btn"
+                  onClick={handleSignUpClick}
+                >
+                  Sign Up
+                </button>
+                </div>
+              </div>
           </div>
-        </div>
       </div>
+    </div>
     </StyleMain>
   );
 };

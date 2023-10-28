@@ -17,9 +17,9 @@ const StyledHeader = styled.header`
     // }
     h1 {
       font-family: "JoSefinSlab";
-      font-size: 30px;
+      font-size: 25px;
       font-weight: bolder;
-      letter-spacing: 5px;
+      letter-spacing: 2px;
     }
     }
     
