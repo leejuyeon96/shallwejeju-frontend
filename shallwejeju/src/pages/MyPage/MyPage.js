@@ -9,7 +9,7 @@ const StyleMain = styled.main`
     position: relative;
     width: 100%;
     height: 800px;
-    opacity: 0.5;
+    opacity: 0.3;
   }
 .profile-image {
     
@@ -58,24 +58,63 @@ label {
  
 }
 
+.friend {
+  position: absolute;
+  bottom: 200px;
+  left: 10px;
+}
+
+.table-wrapper {
+  border-radius: 15px;
+  box-shadow: -5px -5px 10px #fff, 5px 5px 10px #babebc;
+  position: absolute;
+  overflow: hidden;
+  margin-top: 10px;
+}
+table {
+  
+  width: 300px;
+  border-collapse: collapse;
+  
+ 
+}
+
+thead ::before {
+  background-color: #333;
+  color: white;
+  
+}
+
+th {
+  background-color: #FF6600;
+}
+
+th, td {
+  padding: 8px;
+  /* border: 1px solid #ccc; */
+  text-align: center;
+  border-bottom: 1px solid #CD5C5C;
+  pointer-events: none;
+}
+
+tr {
+  background-color: bisque;
+}
+
+/* tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+  background-color: #e0e0e0;
+} */
+
+
+
 `;
+
 const MyPage = () => {
 
-    // 프로필 이미지를 관리할 상태
-    const [profileImage, setProfileImage] = useState(null);
-
-    const [profileInfo, setProfileInfo] = useState({
-      name: "돌맹이", // 기본 이름
-      email: "doldol@example.com", // 기본 이메일
-    });
-    useEffect(() => {
-      // 페이지가 로드될 때, 로컬 스토리지에서 이미지 데이터를 가져옴
-      const savedProfileImage = localStorage.getItem("profileImage");
-      if (savedProfileImage) {
-        setProfileImage(savedProfileImage);
-      }
-    }, []); // 빈 배열을 전달하여 최초 렌더링 시에만 실행
-    // 이미지 업로드 핸들러
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -88,7 +127,57 @@ const MyPage = () => {
       reader.readAsDataURL(file);
     }
 
-  };
+
+};
+
+
+  useEffect(() => {
+    // 페이지가 로드될 때, 로컬 스토리지에서 이미지 데이터를 가져옴
+    const savedProfileImage = localStorage.getItem("profileImage");
+    if (savedProfileImage) {
+      setProfileImage(savedProfileImage);
+    }
+    const storedFriends = localStorage.getItem('friends');
+    if (storedFriends) {
+    setFriends(JSON.parse(storedFriends));
+  }
+  }, []);
+
+
+    // 프로필 이미지를 관리할 상태
+    const [profileImage, setProfileImage] = useState(null);
+
+    const [profileInfo, setProfileInfo] = useState({
+      name: "돌맹이", // 기본 이름
+      email: "doldol@example.com", // 기본 이메일
+    });
+
+    
+      const [friends, setFriends] = useState([]);
+      const [searchName, setSearchName] = useState('');
+
+      const generateUniqueId =() => {
+        const min = 1;
+        const max = 999;
+        const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+        return randomNumber.toString().padStart(3, '0');
+      };
+
+      const addFriend = () => {
+        if (searchName) { const newFriend = {
+          id: generateUniqueId(),
+          name: searchName,
+        };
+        const updatedFriends = [...friends, newFriend];
+         setFriends(updatedFriends);
+         setSearchName('');
+        localStorage.setItem('friends', JSON.stringify(updatedFriends));
+      }  
+    // 빈 배열을 전달하여 최초 렌더링 시에만 실행
+    // 이미지 업로드 핸들러
+   
+      
+    }   
   return (
     <StyleMain>
       <div className="background">
@@ -106,12 +195,52 @@ const MyPage = () => {
         </div>
          <br></br>
          <label className="input-button" for="input-file">프로필사진 변경</label>
-        <input type="file" accept="image/*" id="input-file" onChange={handleImageUpload} style={{display: "none"}} />
-      </div>
-     </div> 
-     </div>
+         <input type="file" accept="image/*" id="input-file" onChange={handleImageUpload} style={{display: "none"}} />
+         </div>
+       </div> 
+       
+          <div className="friend">
+            <h1>Friends</h1>
+              <input type="text" placeholder="친구 검색" value={searchName} onChange={(e) => setSearchName(e.target.value)}/>
+              <button onClick={addFriend}>친구 추가</button>
+              <ul>
+                {friends.map(friend => (
+                  <li key={friend.id}>{friend.name}</li>
+                ))}
+              </ul>
+
+              <h1>친구 목록</h1>
+                  <div className="table-wrapper">
+                    <table>
+                        <thead>
+                          <tr>
+                            <th>친구 ID</th>
+                            <th>친구 이름</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {friends.map((friend) => (
+                            <tr key={friend.id}>
+                              <td>{friend.id}</td>
+                              <td>{friend.name}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                    </table>
+                  </div>
+            </div>
+       
+          <div>
+           <a href="/LikeList">
+            좋아요 목록
+           </a>
+           <a href="/Schedule">
+            여행 일정
+           </a>
+          </div>
+      </div>    
     </StyleMain>
   );
-};
+}
 
 export default MyPage;
