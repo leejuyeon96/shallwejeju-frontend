@@ -18,28 +18,36 @@ const StyleMain = styled.main`
     border-radius: 50%;
     object-fit: cover;
     margin-left: 40px;
-    margin-right: 90px;
+    margin-right: 40px;
+    margin-top: 40px;
   }
   .profile {
     display: flex;
+    border: 3px solid #babebc;
     justify-content: center; /* 수평 가운데 정렬 */
     // align-items: center; /* 수직 가운데 정렬 */
-    top: 20%;
-    left: 35%;
-    height: 100vh;
+    top: 15%;
+    width: 400px;
+    right: 50px;
+    height: 30vh;
     position: absolute;
+    border-radius: 20px;
+    box-shadow: #fff;
+    background-color: whitesmoke;
   }
 
  .name {
   font-size: 25px;
-  margin-top: 40px;
+  margin-top: 60px;
   font-family: "IBM";
+  margin-right: 20px;
 
   
  }
  .email {
   font-size: 20px;
   font-family: "YeongDeok";
+  margin-right: 20px;
 
  }
 
@@ -47,6 +55,7 @@ const StyleMain = styled.main`
   padding: 5px 20px;
   background-color:#FF6600;
   border-radius: 4px;
+  margin-top: 30px;
   color: white;
   cursor: pointer;
   width: auto;
