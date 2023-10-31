@@ -21,23 +21,27 @@ const StyledHeader = styled.header`
       font-weight: bolder;
       letter-spacing: 2px;
     }
+
+   
     }
     
-  }
+  
 
 
-  .header-center {
-    a {
+  .header-center a {
+    
       text-decoration: none;
       padding: 28px;
       color: rgb(10, 10, 85);
       align-items: center;
       font-family: "Yeongdeok";
-      font-size: 16px;
-      
-      
+      font-size: 16px;  
     }
-  }
+
+  .header-center a:hover {
+     color: coral;
+}
+  
   .header-end {
     a {
       font-family: "Yeongdeok";
@@ -58,7 +62,7 @@ const Header = () => {
 
       <div className="header-center">
         <a href="/">홈</a>
-        <a href="#">어떤 여행을 할까?</a>
+        <a href="/PlaceList">어떤 여행을 할까?</a>
         <a href="#">우리의 여행</a>
         <a href="/MyPage">마이페이지</a>
       </div>

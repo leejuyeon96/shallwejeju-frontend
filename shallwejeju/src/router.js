@@ -6,7 +6,7 @@ import KakaoMap from "./pages/Map";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import LoginSignup from "./pages/LoginSignup";
-import PlaceList from "./api/PlaceList";
+import PlaceList from "./pages/PlaceList";
 
 const router = createBrowserRouter([
   {

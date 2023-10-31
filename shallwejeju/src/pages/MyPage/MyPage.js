@@ -223,13 +223,14 @@ const MyPage = () => {
                     <table>
                         <thead>
                           <tr>
-                            <th>친구 ID</th>
+                            
                             <th>친구 이름</th>
                           </tr>
                         </thead>
                         <tbody>
                           {friends.map((friend) => (
                             <tr key={friend.id}>
+                              <td><img src={friend.profileImageUrl}/></td>
                               <td>{friend.id}</td>
                               <td>{friend.name}</td>
                             </tr>
