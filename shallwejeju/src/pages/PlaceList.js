@@ -1,7 +1,8 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect} from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import axios from 'axios';
+import { setSelected } from "../api/user";
 
 const StyleMain = styled.main`
 
@@ -43,6 +44,20 @@ const PlaceList = () => {
        
         const [selected, setSelected] = useState([]);
         const categories = ['자연', '숲', '바다', '액티비티'];
+
+        const categoryAPI = async () => {
+          try {
+            const response = await axios.get("category"); // axios로 데이터 가져오기
+            const data = response.data;
+            setSelected(data);
+          } catch (error) {
+            console.error('카테고리 데이터를 가져오는 중 오류 발생:', error);
+          }
+        };
+
+        useEffect(() => {
+          categoryAPI();
+        }, []);
 
         const handleCategorySelect = (category) => {
           if (selected.includes(category)) {

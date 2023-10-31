@@ -83,17 +83,18 @@ const StyleMain = styled.main`
 `;
 
 const Signup = () => {
-  const [formData, setFormData] = useState({
+  const [formdata, setFormdata] = useState({
     username: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
 
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFormdata({
+      ...formdata,
       [name]: value,
     });
   };
@@ -101,11 +102,11 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (formData.password !== formData.confirmPassword) {
+    if (formdata.password !== formdata.confirmPassword) {
       alert("비밀번호가 일치하지 않습니다.");
       return;
     }
-    if (!formData.id || !formData.username || !formData.email || !formData.password || !formData.confirmPassword) {
+    if (!formdata.id || !formdata.username || !formdata.email || !formdata.password || !formdata.confirmPassword) {
       alert("필수 입력값을 모두 입력하세요.");
       return;
     }
@@ -113,9 +114,9 @@ const Signup = () => {
     try {
       // 회원 가입 데이터를 정의합니다
       const signupData = {
-        username: formData.username,
-        email: formData.email,
-        password: formData.password,
+        username: formdata.username,
+        email: formdata.email,
+        password: formdata.password,
       };
 
       // Axios를 사용하여 서버로 POST 요청을 보냅니다.
@@ -149,7 +150,7 @@ const Signup = () => {
                 type="text"
                 name="id"
                 placeholder="아이디"
-                value={formData.id}
+                value={formdata.id}
                 onChange={handleChange}
               />
             </div>
@@ -159,7 +160,7 @@ const Signup = () => {
                 type="text"
                 name="username"
                 placeholder="사용자 이름"
-                value={formData.username}
+                value={formdata.username}
                 onChange={handleChange}
               />
             </div>
@@ -169,7 +170,7 @@ const Signup = () => {
                 type="email"
                 name="email"
                 placeholder="이메일"
-                value={formData.email}
+                value={formdata.email}
                 onChange={handleChange}
               />
             </div>
@@ -179,7 +180,7 @@ const Signup = () => {
                 type="password"
                 name="password"
                 placeholder="비밀번호"
-                value={formData.password}
+                value={formdata.password}
                 onChange={handleChange}
               />
             </div>
@@ -189,7 +190,7 @@ const Signup = () => {
                 type="password"
                 name="confirmPassword"
                 placeholder="비밀번호 확인"
-                value={formData.confirmPassword}
+                value={formdata.confirmPassword}
                 onChange={handleChange}
               />
             </div>
